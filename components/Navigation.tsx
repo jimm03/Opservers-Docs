@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { Eye } from 'lucide-react'
 
 export default function Navigation() {
   return (
@@ -7,8 +6,8 @@ export default function Navigation() {
       <div className="container">
         <div className="nav-content">
           <Link href="/" className="logo">
-            <Eye size={24} />
-            <span>OPS<span className="logo-accent">ervers</span> Docs</span>
+            <span style={{ fontSize: '1.25rem', marginRight: '0.5rem' }}>👁️</span>
+            <span><span className="logo-ops">OPS</span><span className="logo-accent">ervers</span> Docs</span>
           </Link>
           <ul className="nav-links">
             <li><Link href="/">Home</Link></li>
