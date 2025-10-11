@@ -1,3 +1,5 @@
+import { FaExclamationTriangle } from 'react-icons/fa'
+
 export default function Runbooks() {
   return (
     <div>
@@ -102,6 +104,7 @@ Slack Channels:
         </div>
 
         <div className="alert alert-warning">
+          <FaExclamationTriangle size={18} style={{ marginRight: '0.5rem' }} />
           <strong>Important:</strong> Always document incidents in our incident management 
           system with full timeline, root cause analysis, and action items.
         </div>

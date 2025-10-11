@@ -1,3 +1,5 @@
+import { FaInfoCircle } from 'react-icons/fa'
+
 export default function Setup() {
   return (
     <div>
@@ -86,6 +88,7 @@ kubectl get pods -n opservers`}
         </div>
 
         <div className="alert alert-info">
+          <FaInfoCircle size={18} style={{ marginRight: '0.5rem' }} />
           <strong>Pro Tip:</strong> Use our provided Docker Compose file for quick local 
           development with all dependencies included.
         </div>

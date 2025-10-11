@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { BarChart3 } from 'lucide-react'
+import { FaChartBar, FaInfoCircle } from 'react-icons/fa'
 
 export default function Monitoring() {
   return (
@@ -21,7 +21,7 @@ export default function Monitoring() {
         <p>Real-time application performance and health metrics:</p>
         
         <div className="image-placeholder">
-          <BarChart3 size={48} color="#009267" />
+          <FaChartBar size={48} color="#009267" />
           <h3>Application Metrics Dashboard</h3>
           <p>Replace with your Grafana/Prometheus dashboard screenshot</p>
           <p style={{ fontSize: '0.875rem' }}>
@@ -33,7 +33,7 @@ export default function Monitoring() {
         <p>Server and infrastructure health monitoring:</p>
         
         <div className="image-placeholder">
-          <BarChart3 size={48} color="#009267" />
+          <FaChartBar size={48} color="#009267" />
           <h3>Infrastructure Dashboard</h3>
           <p>Replace with your infrastructure monitoring screenshot</p>
           <p style={{ fontSize: '0.875rem' }}>
@@ -45,7 +45,7 @@ export default function Monitoring() {
         <p>Key business and user activity metrics:</p>
         
         <div className="image-placeholder">
-          <BarChart3 size={48} color="#009267" />
+          <FaChartBar size={48} color="#009267" />
           <h3>Business Metrics Dashboard</h3>
           <p>Replace with your business metrics dashboard screenshot</p>
           <p style={{ fontSize: '0.875rem' }}>
@@ -90,6 +90,7 @@ Warning Alerts:
         </p>
 
         <div className="alert alert-info">
+          <FaInfoCircle size={18} style={{ marginRight: '0.5rem' }} />
           <strong>Pro Tip:</strong> Regular review of monitoring dashboards helps identify 
           potential issues before they become critical incidents.
         </div>

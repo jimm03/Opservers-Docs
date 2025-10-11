@@ -1,4 +1,4 @@
-import { Layers, AlertTriangle } from 'lucide-react'
+import { FaProjectDiagram, FaExclamationTriangle } from 'react-icons/fa'
 
 export default function Architecture() {
   return (
@@ -33,7 +33,7 @@ export default function Architecture() {
         <p>Below is the current system architecture diagram:</p>
         
         <div className="image-placeholder">
-          <Layers size={48} color="#009267" />
+          <FaProjectDiagram size={48} color="#009267" />
           <h3>System Architecture Diagram</h3>
           <p>Replace this with your actual architecture diagram</p>
           <p style={{ fontSize: '0.875rem' }}>
@@ -69,7 +69,7 @@ export default function Architecture() {
         </ul>
 
         <div className="alert alert-warning">
-          <AlertTriangle size={18} style={{ marginRight: '0.5rem' }} />
+          <FaExclamationTriangle size={18} style={{ marginRight: '0.5rem' }} />
           <strong>Note:</strong> Always refer to this architecture diagram when making changes 
           to ensure system integrity and compatibility.
         </div>

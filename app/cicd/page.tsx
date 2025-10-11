@@ -1,4 +1,4 @@
-import { AlertTriangle } from 'lucide-react'
+import { FaExclamationTriangle } from 'react-icons/fa'
 
 export default function CICD() {
   return (
@@ -90,7 +90,7 @@ jobs:
         </ul>
 
         <div className="alert alert-warning">
-          <AlertTriangle size={18} style={{ marginRight: '0.5rem' }} />
+          <FaExclamationTriangle size={18} style={{ marginRight: '0.5rem' }} />
           <strong>Important:</strong> All deployments to production require successful 
           completion of all pipeline stages and at least one code review approval.
         </div>

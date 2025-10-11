@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { FaEye } from 'react-icons/fa'
 
 export default function Navigation() {
   return (
@@ -6,7 +7,7 @@ export default function Navigation() {
       <div className="container">
         <div className="nav-content">
           <Link href="/" className="logo">
-            <span style={{ fontSize: '1.25rem', marginRight: '0.5rem' }}>👁️</span>
+            <FaEye size={24} />
             <span><span className="logo-ops">OPS</span><span className="logo-accent">ervers</span> Docs</span>
           </Link>
           <ul className="nav-links">
