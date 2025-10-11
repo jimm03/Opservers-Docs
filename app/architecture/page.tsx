@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { Layers, AlertTriangle } from 'lucide-react'
 
 export default function Architecture() {

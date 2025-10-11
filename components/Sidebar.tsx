@@ -9,7 +9,6 @@ import {
   GitBranch, 
   BarChart3, 
   BookOpen,
-  Server
 } from 'lucide-react'
 
 const menuItems = [

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { BarChart3, AlertTriangle } from 'lucide-react'
+import { BarChart3 } from 'lucide-react'
 
 export default function Monitoring() {
   return (

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowRight, CheckCircle, Server, Settings, GitBranch, BarChart3, BookOpen } from 'lucide-react'
+import { ArrowRight, Server, Settings, GitBranch, BarChart3, BookOpen } from 'lucide-react'
 
 export default function Home() {
   const features = [

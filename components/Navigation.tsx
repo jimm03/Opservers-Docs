@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { Eye, Server } from 'lucide-react'
+import { Eye } from 'lucide-react'
 
 export default function Navigation() {
   return (
