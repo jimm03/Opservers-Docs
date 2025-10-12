@@ -1,4 +1,4 @@
-import { FaProjectDiagram, FaExclamationTriangle } from 'react-icons/fa'
+import { FaExclamationTriangle } from 'react-icons/fa'
 
 export default function Architecture() {
   return (
@@ -8,13 +8,6 @@ export default function Architecture() {
         <p>
           This section provides a comprehensive overview of our system architecture, 
           including component interactions, data flow, and infrastructure design.
-        </p>
-        
-        <h2>High-Level Overview</h2>
-        <p>
-          Our architecture follows a microservices pattern with clear separation of concerns 
-          and well-defined APIs. The system is designed for scalability, reliability, and 
-          maintainability.
         </p>
         
         <div className="code-block">
@@ -32,12 +25,26 @@ export default function Architecture() {
         <h2>Architecture Diagram</h2>
         <p>Below is the current system architecture diagram:</p>
         
-        <div className="image-placeholder">
-          <FaProjectDiagram size={48} color="#009267" />
-          <h3>System Architecture Diagram</h3>
-          <p>Replace this with your actual architecture diagram</p>
-          <p style={{ fontSize: '0.875rem' }}>
-            Recommended: SVG or high-resolution PNG showing all components and connections
+        {/* Simple image that displays at its natural size */}
+        <div style={{ textAlign: 'center', margin: '2rem 0' }}>
+          <img 
+            src="/images/Architecture.png"
+            alt="OPServers System Architecture Diagram"
+            style={{
+              maxWidth: '100%',
+              height: 'auto',
+              border: '1px solid var(--border)',
+              borderRadius: '8px',
+              boxShadow: 'var(--shadow-md)'
+            }}
+          />
+          <p style={{ 
+            marginTop: '1rem', 
+            color: 'var(--text-light)', 
+            fontSize: '0.875rem',
+            fontStyle: 'italic'
+          }}>
+            Complete system architecture showing all components and data flow
           </p>
         </div>
 
