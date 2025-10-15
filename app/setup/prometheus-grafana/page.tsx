@@ -52,9 +52,9 @@ helm install kube-prometheus-stack prometheus-community/kube-prometheus-stack \\
         </div>
 
         <p>To see how Prometheus is configured on what to scrape, we list service monitors:</p>
-        <div className="code-block">
+        <pre className="code-block">
           {`kubectl get servicemonitors -n monitoring`}
-        </div>
+        </pre>
 
         <h2>5. Create a Service Monitor for the webapp service</h2>
         
@@ -67,12 +67,12 @@ helm install kube-prometheus-stack prometheus-community/kube-prometheus-stack \\
         </div>
 
         <p>You&apos;ll likely see:</p>
-        <div className="code-block">
+        <pre className="code-block">
           {`ports:
 - port: 5000
   targetPort: 5000
   nodePort: 30007`}
-        </div>
+        </pre>
 
         <p><strong>Add a name to that port</strong> (Prometheus ServiceMonitor needs a named port).</p>
         <p>Edit it like this:</p>
@@ -81,21 +81,21 @@ helm install kube-prometheus-stack prometheus-community/kube-prometheus-stack \\
         </div>
 
         <p>Change from:</p>
-        <div className="code-block">
+        <pre className="code-block">
           {`ports:
 - port: 5000
   targetPort: 5000
   nodePort: 30007`}
-        </div>
+        </pre>
 
         <p>to:</p>
-        <div className="code-block">
+        <pre className="code-block">
           {`ports:
 - name: web
   port: 5000
   targetPort: 5000
   nodePort: 30007`}
-        </div>
+        </pre>
 
         <h3>Step 2. Apply the ServiceMonitor</h3>
         <p>Now apply:</p>
