@@ -1,84 +1,126 @@
-import { FaExclamationTriangle } from 'react-icons/fa'
-
+import Image from 'next/image'
 export default function Architecture() {
+  const tools = [
+    { tool: "Kubernetes", purpose: "Platform to deploy and manage the web application and monitoring stack" },
+    { tool: "Web Application (Flask)", purpose: "Simulated workload generating structured logs and metrics" },
+    { tool: "Prometheus", purpose: "Collects time-series metrics from the web app and Kubernetes cluster" },
+    { tool: "Alertmanager", purpose: "Handles alert notifications based on Prometheus rules" },
+    { tool: "Grafana", purpose: "Visualizes metrics through real-time dashboards" },
+    { tool: "Splunk Enterprise", purpose: "Collects and analyzes structured logs from the app and cluster" },
+    { tool: "Jenkins", purpose: "Automates build and deployment of the web app to the cluster" }
+  ]
+
   return (
     <div>
       <div className="card">
-        <h1>System Architecture</h1>
+        <h1>Project Architecture</h1>
         <p>
-          This section provides a comprehensive overview of our system architecture, 
-          including component interactions, data flow, and infrastructure design.
+          This project implements a real-time monitoring, visualization, and logging solution for a simulated production web application running in a Kubernetes cluster.
         </p>
         
-        <div className="code-block">
-          {`Architecture Components:
-• Frontend: Next.js application with TypeScript
-• API Gateway: RESTful API layer with rate limiting
-• Database: PostgreSQL with connection pooling
-• Cache: Redis for session storage and caching
-• Message Queue: RabbitMQ for asynchronous processing
-• Monitoring: Prometheus + Grafana for observability
-• Storage: S3-compatible object storage
-• CDN: Global content delivery network`}
-        </div>
-
         <h2>Architecture Diagram</h2>
         <p>Below is the current system architecture diagram:</p>
         
-        {/* Simple image that displays at its natural size */}
+        {/* Updated with Next.js Image component */}
         <div style={{ textAlign: 'center', margin: '2rem 0' }}>
-          <img 
-            src="/images/Architecture.png"
-            alt="OPServers System Architecture Diagram"
-            style={{
-              maxWidth: '100%',
-              height: 'auto',
-              border: '1px solid var(--border)',
-              borderRadius: '8px',
-              boxShadow: 'var(--shadow-md)'
-            }}
-          />
+          <div style={{
+            display: 'inline-block',
+            maxWidth: '100%',
+            border: '1px solid var(--border)',
+            borderRadius: '8px',
+            boxShadow: 'var(--shadow-md)',
+            overflow: 'hidden'
+          }}>
+            <Image
+              src="/images/Architecture.png"
+              alt="OPServers System Architecture Diagram"
+              width={800}
+              height={600}
+              style={{
+                width: '100%',
+                height: 'auto',
+                maxWidth: '800px'
+              }}
+            />
+          </div>
           <p style={{ 
             marginTop: '1rem', 
             color: 'var(--text-light)', 
             fontSize: '0.875rem',
             fontStyle: 'italic'
           }}>
-            Complete system architecture showing all components and data flow
+            Complete system architecture showing all components
           </p>
         </div>
 
-        <h2>Key Components</h2>
-        
-        <h3>Application Layer</h3>
-        <ul className="bullet-list">
-          <li>Next.js frontend with server-side rendering</li>
-          <li>Node.js API services with Express.js</li>
-          <li>Authentication service with JWT tokens</li>
-          <li>File processing service</li>
-        </ul>
+        <h2>Tools and Technologies Used</h2>
+        <p>
+          Our monitoring stack leverages industry-standard tools to provide comprehensive observability, 
+          automated deployment, and centralized logging capabilities.
+        </p>
 
-        <h3>Data Layer</h3>
-        <ul className="bullet-list">
-          <li>PostgreSQL for relational data</li>
-          <li>Redis for caching and sessions</li>
-          <li>MongoDB for document storage (if applicable)</li>
-          <li>Elasticsearch for search and analytics</li>
-        </ul>
-
-        <h3>Infrastructure</h3>
-        <ul className="bullet-list">
-          <li>Docker containerization</li>
-          <li>Kubernetes orchestration</li>
-          <li>Load balancers with health checks</li>
-          <li>CDN for static assets</li>
-          <li>Backup and disaster recovery systems</li>
-        </ul>
-
-        <div className="alert alert-warning">
-          <FaExclamationTriangle size={18} style={{ marginRight: '0.5rem' }} />
-          <strong>Note:</strong> Always refer to this architecture diagram when making changes 
-          to ensure system integrity and compatibility.
+        {/* Simple Tools Table */}
+        <div style={{ 
+          overflowX: 'auto',
+          margin: '2rem 0',
+          border: '1px solid var(--border)',
+          borderRadius: '8px'
+        }}>
+          <table style={{ 
+            width: '100%',
+            borderCollapse: 'collapse',
+            background: 'var(--background)'
+          }}>
+            <thead>
+              <tr style={{ 
+                background: 'var(--background-alt)'
+              }}>
+                <th style={{ 
+                  padding: '1rem 1.5rem',
+                  textAlign: 'left',
+                  fontWeight: '600',
+                  color: 'var(--primary-dark)',
+                  borderBottom: '2px solid var(--primary-color)'
+                }}>
+                  Tool
+                </th>
+                <th style={{ 
+                  padding: '1rem 1.5rem',
+                  textAlign: 'left',
+                  fontWeight: '600',
+                  color: 'var(--primary-dark)',
+                  borderBottom: '2px solid var(--primary-color)'
+                }}>
+                  Purpose
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {tools.map((item, index) => (
+                <tr 
+                  key={index}
+                  style={{ 
+                    borderBottom: '1px solid var(--border)'
+                  }}
+                >
+                  <td style={{ 
+                    padding: '1rem 1.5rem',
+                    fontWeight: '600',
+                    color: 'var(--text-primary)'
+                  }}>
+                    {item.tool}
+                  </td>
+                  <td style={{ 
+                    padding: '1rem 1.5rem',
+                    color: 'var(--text-secondary)',
+                    lineHeight: '1.5'
+                  }}>
+                    {item.purpose}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

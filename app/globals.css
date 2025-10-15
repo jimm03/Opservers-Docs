@@ -30,13 +30,7 @@ body {
   font-size: 15px;
 }
 
-.container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-/* Layout */
+/* ===== LAYOUT ===== */
 .app-container {
   display: flex;
   min-height: 100vh;
@@ -47,7 +41,13 @@ body {
   width: 100%;
 }
 
-/* Typography */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ===== TYPOGRAPHY ===== */
 h1 {
   font-size: 2.5rem;
   font-weight: 700;
@@ -85,7 +85,7 @@ p {
   line-height: 1.7;
 }
 
-/* Navigation */
+/* ===== NAVIGATION ===== */
 .nav {
   background: var(--background);
   border-bottom: 1px solid var(--border);
@@ -123,20 +123,33 @@ p {
   list-style: none;
 }
 
-.nav-links a {
+.nav-item {
+  position: relative;
+  list-style: none;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   text-decoration: none;
   color: var(--text-secondary);
   font-weight: 500;
   transition: all 0.2s ease;
   padding: 0.5rem 0;
   position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
 }
 
-.nav-links a:hover {
+.nav-link:hover {
   color: var(--primary-color);
 }
 
-.nav-links a::after {
+.nav-link::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -147,11 +160,67 @@ p {
   transition: width 0.2s ease;
 }
 
-.nav-links a:hover::after {
+.nav-link:hover::after {
   width: 100%;
 }
 
-/* Sidebar */
+/* Navigation Dropdown */
+.nav-dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  min-width: 200px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: var(--shadow-lg);
+  z-index: 1000;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0;
+  animation: dropdownFade 0.2s ease;
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-item {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background: var(--background-alt);
+  color: var(--primary-color);
+}
+
+/* ===== SIDEBAR ===== */
 .sidebar {
   width: 280px;
   min-width: 280px;
@@ -169,11 +238,11 @@ p {
   padding: 0 1.5rem;
 }
 
-.sidebar-nav li {
+.sidebar-item {
   margin-bottom: 0.25rem;
 }
 
-.sidebar-nav a {
+.sidebar-link {
   display: flex;
   align-items: center;
   padding: 0.75rem 1rem;
@@ -182,21 +251,83 @@ p {
   border-radius: 8px;
   transition: all 0.2s ease;
   font-weight: 500;
+  width: 100%;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: inherit;
+  font-family: inherit;
 }
 
-.sidebar-nav a:hover {
+.sidebar-link:hover {
   background: var(--primary-light);
   color: white;
   transform: translateX(4px);
 }
 
-.sidebar-nav a.active {
+.sidebar-link.active {
   background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
   color: white;
   box-shadow: var(--shadow-md);
 }
 
-/* Main Content */
+.sidebar-icon {
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+
+.sidebar-label {
+  flex: 1;
+  text-align: left;
+}
+
+.sidebar-chevron {
+  margin-left: auto;
+  opacity: 0.7;
+}
+
+.sidebar-expandable {
+  width: 100%;
+}
+
+/* Sidebar Subnavigation */
+.sidebar-subnav {
+  list-style: none;
+  margin: 0.25rem 0 0.5rem 0.5rem;
+  padding: 0;
+  border-left: 2px solid var(--border-light);
+  margin-left: 2rem;
+}
+
+.sidebar-subnav li {
+  margin-bottom: 0.125rem;
+}
+
+.sidebar-sublink {
+  display: block;
+  padding: 0.5rem 1rem 0.5rem 0.75rem;
+  text-decoration: none;
+  color: var(--text-light);
+  border-radius: 6px;
+  transition: all 0.2s;
+  font-size: 0.875rem;
+  margin-left: 0.5rem;
+  border-left: 2px solid transparent;
+}
+
+.sidebar-sublink:hover {
+  background: var(--background-alt);
+  color: var(--primary-color);
+  border-left-color: var(--primary-light);
+}
+
+.sidebar-sublink.active {
+  background: var(--primary-light);
+  color: white;
+  border-left-color: var(--primary-color);
+}
+
+/* ===== MAIN CONTENT ===== */
 .main-content {
   flex: 1;
   min-height: calc(100vh - 73px);
@@ -208,7 +339,7 @@ p {
   max-width: 100%;
 }
 
-/* Cards */
+/* ===== CARDS ===== */
 .card {
   background: var(--background);
   border: 1px solid var(--border);
@@ -224,14 +355,7 @@ p {
   transform: translateY(-2px);
 }
 
-.card h3 {
-  margin-top: 0;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-/* Code blocks */
+/* ===== CODE BLOCKS ===== */
 .code-block {
   background: var(--background-alt);
   border: 1px solid var(--border);
@@ -245,7 +369,7 @@ p {
   border-left: 4px solid var(--primary-color);
 }
 
-/* Images */
+/* ===== IMAGES ===== */
 .documentation-image {
   width: 100%;
   max-width: 800px;
@@ -270,7 +394,7 @@ p {
   margin: 0.5rem 0;
 }
 
-/* Lists */
+/* ===== LISTS ===== */
 .checklist {
   list-style: none;
   margin: 1.5rem 0;
@@ -310,7 +434,7 @@ p {
   left: 0.5rem;
 }
 
-/* Buttons and Links */
+/* ===== BUTTONS AND LINKS ===== */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -341,7 +465,7 @@ p {
   background: #9bc42a;
 }
 
-/* Grid Layout for Homepage */
+/* ===== GRID LAYOUT ===== */
 .features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -373,7 +497,7 @@ p {
   gap: 0.5rem;
 }
 
-/* Alert boxes */
+/* ===== ALERT BOXES ===== */
 .alert {
   padding: 1rem 1.5rem;
   border-radius: 8px;
@@ -393,7 +517,7 @@ p {
   color: var(--text-secondary);
 }
 
-/* Responsive */
+/* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
   .main-layout {
     flex-direction: column;
@@ -416,5 +540,29 @@ p {
   .container {
     padding: 0 1rem;
   }
+
+  .dropdown-menu {
+    position: fixed;
+    top: 60px;
+    left: 1rem;
+    right: 1rem;
+    min-width: auto;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
   
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  .card {
+    padding: 1.5rem;
+  }
 }
