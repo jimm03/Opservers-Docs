@@ -25,7 +25,6 @@ export default function Navigation() {
         { href: '/workflow/ci-cd-workflow', label: 'CI/CD Workflow' },
         { href: '/workflow/monitoring-workflow', label: 'Monitoring Workflow' },
         { href: '/workflow/logging-workflow', label: 'Logging Workflow' },
-        { href: '/workflow/incident-response-workflow', label: 'Incident Response Workflow' }
       ]
     },
     { 

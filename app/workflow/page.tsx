@@ -18,11 +18,6 @@ export default function Workflow() {
       title: 'Logging Workflow',
       description: 'Log flow from applications to Splunk'
     },
-    {
-      href: '/workflow/incident-response-workflow',
-      title: 'Incident Response Workflow',
-      description: 'Process flow during alert triggers'
-    }
   ]
 
   return (
