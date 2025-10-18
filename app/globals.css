@@ -627,4 +627,106 @@ p {
     gap: 1rem;
   }
 }
+/* Runbook tag links */
+.tag-link {
+  padding: 0.25rem 0.75rem;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: 20px;
+  color: #0369a1;
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.tag-link:hover {
+  background: #e0f2fe;
+  border-color: #7dd3fc;
+  transform: translateY(-1px);
+}
+/* Table styles for runbooks */
+.table-container {
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+.runbook-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.runbook-table th {
+  background: #f8f9fa;
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #2d3748;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.runbook-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.runbook-table tr:last-child td {
+  border-bottom: none;
+}
+
+.runbook-table tr:hover {
+  background: #f7fafc;
+}
+
+/* Responsive table */
+@media (max-width: 768px) {
+  .runbook-table {
+    font-size: 0.875rem;
+  }
+  
+  .runbook-table th,
+  .runbook-table td {
+    padding: 0.75rem 0.5rem;
+  }
+}
+/* HTTP Errors specific styles */
+.error-types {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.error-type-card {
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary-color);
+}
+
+.error-type-card h3 {
+  margin: 0 0 1rem 0;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+}
+
+.error-type-card ul {
+  margin: 0;
+}
+
+.error-type-card li {
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .error-types {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
 }

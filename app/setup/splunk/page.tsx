@@ -43,20 +43,12 @@ splunk-operator-75f5d4d85b-8pshn   1/1     Running   0          5s`}
 
         <h2>3. Creating a Splunk Enterprise deployment</h2>
         <p>The&nbsp;<code>Standalone</code>&nbsp;custom resource is used to create a single instance deployment of Splunk Enterprise.</p>
-        
-        <p><strong>Run the command to create a deployment named &quot;s1&quot;:</strong></p>
-        <pre className="code-block">
-{`cat <<EOF | kubectl apply -n splunk-operator -f -
-apiVersion: enterprise.splunk.com/v4
-kind: Standalone
-metadata:
-  name: s1
-  finalizers:
-  - enterprise.splunk.com/delete-pvc
-EOF`}
-        </pre>
+        <p>Create a file called <a href="https://github.com/opswerks-academy/i9c-observability/blob/main/k8s/infra/splunk/splunk-standalone.yaml" target="_blank" rel="noopener noreferrer"><code>splunk-standalone.yaml</code></a>:</p>
 
-        <p><strong>The&nbsp;<code>enterprise.splunk.com/delete-pvc</code>&nbsp;finalizer is optional, and tells the Splunk Operator to remove any Kubernetes&nbsp;<a href="https://kubernetes.io/docs/concepts/storage/persistent-volumes/" target="_blank" rel="noopener noreferrer">Persistent Volumes</a>&nbsp;associated with the instance if you delete the custom resource(CR).</strong></p>
+         <p>Then apply and check your splunk enterprise:</p>
+        <div className="code-block">
+          {`kubectl apply -f splunk-web-service.yml`}
+        </div>
 
         <div className="alert alert-warning">
           <strong>WAIT FOR A COUPLE OF MINUTES! BEFORE PROCEEDING TO THE NEXT STEP.</strong>
