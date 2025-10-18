@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { FaArrowLeft, FaExclamationTriangle, FaMemory } from 'react-icons/fa'
+import { FaArrowLeft, FaExclamationTriangle } from 'react-icons/fa'
 
 export default function PodOOMKilledRunbook() {
   return (
@@ -34,9 +34,9 @@ export default function PodOOMKilledRunbook() {
         <div className="code-block">
           {`kubectl get pods -A | grep -i oom`}
         </div>
-        <p>This helps identify pods that have "OOM" in their name or show frequent restarts.</p>
+        <p>This helps identify pods that have &quot;OOM&quot; in their name or show frequent restarts.</p>
 
-        <h3>2. Inspect the Pod's Events and Termination Reason</h3>
+        <h3>2. Inspect the Pod&apos;s Events and Termination Reason</h3>
         <div className="code-block">
           {`kubectl describe pod <pod-name> -n <namespace>`}
         </div>
@@ -44,7 +44,7 @@ export default function PodOOMKilledRunbook() {
         <ul className="bullet-list">
           <li><strong>Last State → Terminated:</strong> reason should show <code>OOMKilled</code></li>
           <li><strong>Exit Code:</strong> usually <code>137</code></li>
-          <li><strong>Events:</strong> confirm a message about "Exceeded memory limit"</li>
+          <li><strong>Events:</strong> confirm a message about &quot;Exceeded memory limit&quot;</li>
         </ul>
 
         <h3>3. Check the Container Logs Before It Was Killed</h3>
@@ -71,7 +71,7 @@ export default function PodOOMKilledRunbook() {
         <div className="code-block">
           {`kubectl edit deploy <deployment-name> -n <namespace>`}
         </div>
-        <p>Then adjust the container's memory resources, for example:</p>
+        <p>Then adjust the container&apos;s memory resources, for example:</p>
         <div className="code-block">
           {`resources:
   limits:

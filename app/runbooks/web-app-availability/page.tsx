@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { FaArrowLeft, FaExclamationTriangle, FaServer } from 'react-icons/fa'
+import { FaArrowLeft, FaExclamationTriangle } from 'react-icons/fa'
 
 export default function WebAppAvailabilityRunbook() {
   return (
@@ -84,8 +84,8 @@ kubectl describe svc <service-name> -n <namespace>`}
         <div className="code-block">
           {`job="web-service"`}
         </div>
-        <p><strong>Expected:</strong> All targets "up".</p>
-        <p><strong>If targets are "down", hover to see why</strong> (e.g., connection refused, timeout, no route to host).</p>
+        <p><strong>Expected:</strong> All targets &quot;up&quot;.</p>
+        <p><strong>If targets are &quot;down&quot;, hover to see why</strong> (e.g., connection refused, timeout, no route to host).</p>
 
         <h3>4. Validate Metrics Endpoint</h3>
         <p>Try hitting the /metrics endpoint directly:</p>
@@ -96,7 +96,7 @@ curl http://localhost:8080/metrics`}
         <p><strong>Expected:</strong> Returns metrics text output.</p>
         <p><strong>If not reachable:</strong></p>
         <ul className="bullet-list">
-          <li>App isn't exposing metrics</li>
+          <li>App isn&apos;t exposing metrics</li>
           <li>Wrong port</li>
           <li>ServiceMonitor points to incorrect path</li>
         </ul>
@@ -111,7 +111,7 @@ curl http://localhost:8080/metrics`}
         </div>
 
         <h2>Remediation Steps</h2>
-        <pre className="code-block">
+        <div className="code-block">
           {`# Restart the deployment after fix:
 kubectl rollout restart deployment/<deployment-name> -n <namespace>
 
@@ -120,14 +120,14 @@ kubectl get pods -n <namespace> -w
 
 # Confirm recovery in Prometheus:
 up{job="web-service"}`}
-        </pre>
+        </div>
         <p><strong>Success:</strong> All targets return 1.</p>
 
         <h2>Verification</h2>
         <ul className="bullet-list">
           <li>All pods show <code>Running</code> status with correct readiness</li>
           <li>Service endpoints show correct pod IPs</li>
-          <li>Prometheus targets show "up" status</li>
+          <li>Prometheus targets show &quot;up&quot; status</li>
           <li><code>/metrics</code> endpoint returns data</li>
           <li>Application responds to normal HTTP requests</li>
           <li>Alert resolves in Alertmanager</li>

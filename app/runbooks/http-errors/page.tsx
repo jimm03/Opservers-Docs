@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { FaArrowLeft, FaExclamationTriangle, FaBug } from 'react-icons/fa'
+import { FaArrowLeft, FaExclamationTriangle } from 'react-icons/fa'
 
 export default function HTTPErrorsRunbook() {
   return (

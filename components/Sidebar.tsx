@@ -9,7 +9,6 @@ import {
   FaCodeBranch,
   FaChartBar,
   FaBook,
-  FaShieldAlt,
   FaChevronDown,
   FaChevronRight
 } from 'react-icons/fa'
