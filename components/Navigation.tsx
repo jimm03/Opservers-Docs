@@ -31,11 +31,10 @@ export default function Navigation() {
       label: 'Features', 
       children: [
         { href: '/features/monitoring-alerting', label: 'Monitoring & Alerting' },
-        { href: '/features/centralized-logging', label: 'Centralized Logging' }
+        { href: '/features/centralized-logging', label: 'Logging & Alerting' }
       ]
     },
     { href: '/runbooks', label: 'Runbooks' },
-    { href: '/disaster-recovery', label: 'Disaster Recovery' },
   ]
 
   const toggleDropdown = (label: string) => {

@@ -58,11 +58,10 @@ const menuItems: MenuItem[] = [
     children: [
       { href: '/features', label: 'Overview' },
       { href: '/features/monitoring-alerting', label: 'Monitoring & Alerting' },
-      { href: '/features/centralized-logging', label: 'Centralized Logging' }
+      { href: '/features/centralized-logging', label: 'Logging & Alerting' }
     ]
   },
   { href: '/runbooks', label: 'Runbooks', icon: FaBook },
-  { href: '/disaster-recovery', label: 'Disaster Recovery Plan', icon: FaShieldAlt },
 ]
 
 export default function Sidebar() {
