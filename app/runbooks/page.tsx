@@ -78,33 +78,6 @@ export default function Runbooks() {
           ))}
         </div>
 
-        <h2>Communication Protocol</h2>
-        <ul className="bullet-list">
-          <li><strong>Immediate:</strong> Acknowledge incident in #incidents channel</li>
-          <li><strong>15 minutes:</strong> Provide initial assessment and ETA</li>
-          <li><strong>30 minutes:</strong> Escalate to secondary on-call if needed</li>
-          <li><strong>1 hour:</strong> Escalate to engineering manager</li>
-          <li><strong>Post-resolution:</strong> Share incident summary and timeline</li>
-        </ul>
-
-        <h2>Emergency Contacts</h2>
-        <div className="code-block">
-          {`Primary On-call:    [Name] - @slack - +1-555-0100
-Secondary:        [Name] - @slack - +1-555-0101  
-Infrastructure:   #infra-team - +1-555-0102
-Management:       [EM Name] - @slack - +1-555-0103
-
-Slack Channels:
-• #incidents      - Incident coordination
-• #infra-alerts   - Infrastructure issues
-• #devops         - General DevOps discussion`}
-        </div>
-
-        <div className="alert alert-warning">
-          <FaExclamationTriangle size={18} style={{ marginRight: '0.5rem' }} />
-          <strong>Important:</strong> Always document incidents in our incident management 
-          system with full timeline, root cause analysis, and action items.
-        </div>
       </div>
     </div>
   )

@@ -70,8 +70,6 @@ const menuItems: MenuItem[] = [
       { href: '/runbooks/pod-oom-killed', label: 'Pod OOM Killed' },
       { href: '/runbooks/node-high-cpu', label: 'Node High CPU' },
       { href: '/runbooks/node-high-memory', label: 'Node High Memory' },
-      { href: '/runbooks/pod-high-cpu', label: 'Pod High CPU' },
-      { href: '/runbooks/pod-high-memory', label: 'Pod High Memory' },
       { href: '/runbooks/web-app-availability', label: 'Web App Availability' },
       { href: '/runbooks/web-app-latency', label: 'Web App Latency' },
       { href: '/runbooks/http-errors', label: 'HTTP Errors' }
