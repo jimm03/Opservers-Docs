@@ -25,8 +25,7 @@ export default function Workflow() {
       <div className="card">
         <h1>Workflow</h1>
         <p>
-          Detailed workflow diagrams and explanations for our CI/CD, monitoring, logging, 
-          and incident response processes.
+          Detailed workflow diagrams and explanations for our CI/CD, monitoring, and logging processes.
         </p>
 
         <div className="features-grid">

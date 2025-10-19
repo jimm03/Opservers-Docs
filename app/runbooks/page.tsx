@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { FaBook, FaArrowRight, FaExclamationTriangle } from 'react-icons/fa'
+import { FaBook, FaArrowRight } from 'react-icons/fa'
 
 export default function Runbooks() {
   const runbookItems = [

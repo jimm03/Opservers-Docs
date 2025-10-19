@@ -729,4 +729,150 @@ p {
     gap: 1rem;
   }
 }
+/* Monitoring Workflow specific styles */
+.architecture-image {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e1e5e9;
+  margin: 1rem 0;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.feature-card {
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary-color);
+}
+
+.feature-card h4 {
+  margin: 0 0 0.5rem 0;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+}
+
+.feature-card p {
+  margin: 0;
+  color: #555;
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .architecture-image {
+    width: 100%;
+    height: auto;
+  }
+}
+/* Centralized Logging specific styles */
+.dashboard-grid-4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.dashboard-item {
+  text-align: center;
+}
+
+.dashboard-image {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e1e5e9;
+}
+
+.image-caption {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+.image-caption strong {
+  color: #006d77;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.alert-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.alert-item {
+  text-align: center;
+}
+
+.alert-image {
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e1e5e9;
+}
+
+.use-cases-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.use-case-card {
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #006d77;
+}
+
+.use-case-card h4 {
+  margin: 0 0 0.5rem 0;
+  color: #006d77;
+  font-size: 1.1rem;
+}
+
+.use-case-card p {
+  margin: 0;
+  color: #555;
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+
+/* Use a different color for Splunk feature cards */
+.features-grid .feature-card {
+  border-left-color: #006d77;
+}
+
+.features-grid .feature-card h4 {
+  color: #006d77;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .dashboard-grid-4,
+  .alert-grid,
+  .use-cases-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .dashboard-image,
+  .alert-image {
+    width: 100%;
+    height: auto;
+  }
+}
 }

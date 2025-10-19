@@ -1,43 +1,33 @@
+import Image from 'next/image'
+
 export default function LoggingWorkflow() {
   return (
     <div>
       <div className="card">
         <h1>Logging Workflow</h1>
         <p>
-          Shows how application logs are collected, processed, and analyzed through our centralized 
-          logging infrastructure using Splunk.
+          Describes how application logs are collected and transmitted to Splunk through the HTTP Event Collector (HEC), 
+  where they are indexed, analyzed, and visualized for real-time monitoring, troubleshooting, and alerting.
         </p>
 
-        <h2>Log Flow</h2>
-        <div className="code-block">
-          {`Application Logs → Filebeat/Splunk Forwarder → Splunk Indexers → Splunk Search Heads → Dashboards & Alerts`}
+        <h2>Architecture Overview</h2>
+        <div className="image-section">
+          <Image 
+            src="/images/architecture/splunk-workflow.png" 
+            alt="Monitoring Architecture Diagram"
+            width={1100}
+            height={280}
+            className="architecture-image"
+          />
         </div>
 
-        <h2>Components</h2>
-        <ul className="bullet-list">
-          <li><strong>Application Logs:</strong> Structured JSON logs from microservices</li>
-          <li><strong>Splunk Forwarders:</strong> Lightweight agents that collect and forward logs</li>
-          <li><strong>Splunk Indexers:</strong> Parse and index log data for searching</li>
-          <li><strong>Search Heads:</strong> Provide search and reporting capabilities</li>
-        </ul>
+        <h2>Workflow Description</h2>
+        <p>
+          The flow starts from the web application (app.py), which generates structured logs whenever users interact with the system or errors occur. These logs are sent to Splunk HEC (HTTP Event Collector) via an HTTP POST request using the application’s HEC token and HEC URL. The HEC receives the log data securely and forwards it into Splunk’s indexing pipeline. Splunk then parses, stores, and indexes the logs, making them searchable and ready for visualizations or dashboards in the Splunk Web UI. This end-to-end process enables logs from the application to appear in Splunk in real time and be used for monitoring, troubleshooting, and reporting.
+        </p>
+       
 
-        <h2>Processing Steps</h2>
-        <ul className="bullet-list">
-          <li>Log collection from application containers and hosts</li>
-          <li>Parsing and enrichment of log events</li>
-          <li>Indexing for fast search and analysis</li>
-          <li>Correlation with metrics and traces</li>
-          <li>Alerting on log patterns and errors</li>
-        </ul>
-
-        <h2>Use Cases</h2>
-        <ul className="bullet-list">
-          <li>Debugging application issues</li>
-          <li>Security incident investigation</li>
-          <li>Performance analysis</li>
-          <li>Compliance reporting</li>
-          <li>Business intelligence</li>
-        </ul>
+       
       </div>
     </div>
   )
