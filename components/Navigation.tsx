@@ -15,6 +15,7 @@ export default function Navigation() {
       children: [
         { href: '/setup/jenkins', label: 'Jenkins' },
         { href: '/setup/splunk', label: 'Splunk' },
+        { href: '/setup/splunk-alerts', label: 'Splunk Alerting' },
         { href: '/setup/prometheus-grafana', label: 'Prometheus & Grafana' },
         { href: '/setup/alertmanager', label: 'Alertmanager' }
       ]

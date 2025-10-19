@@ -37,7 +37,7 @@ export default function CentralizedLogging() {
               height={500}
               className="dashboard-image"
             />
-            <p className="image-caption"><strong>App Performance:</strong> Measures request latency, throughput, and dependency response times to assess and maintain optimal application performance.</p>
+            <p className="image-caption"><strong>App Performance:</strong> Measures request latency to assess and maintain optimal application performance.</p>
           </div>
           <div className="dashboard-item">
             <Image 
@@ -72,8 +72,8 @@ export default function CentralizedLogging() {
             <Image 
               src="/images/logging/splunk-email-alert.png" 
               alt="Splunk Email Alert Notifications"
-              width={800}
-              height={500}
+              width={1100}
+              height={550}
               className="alert-image"
             />
             <p className="image-caption"><strong>Email Alerts:</strong> Detailed email notifications with comprehensive error context, timestamps, and direct links to relevant dashboards for immediate investigation.</p>

@@ -6,8 +6,7 @@ export default function CICDorkflow() {
       <div className="card">
         <h1>CI/CD Workflow</h1>
         <p>
-          Explains how Prometheus gathers metrics from various services and triggers alerts 
-          through Alertmanager when thresholds are breached.
+          Explains how the CI/CD pipeline automates the build and deployment process, ensuring that every code change is reviewed, built, and deployed efficiently through Jenkins and Kubernetes.
         </p>
 
         <h2>Architecture Overview</h2>
@@ -23,19 +22,10 @@ export default function CICDorkflow() {
 
         <h2>Workflow Description</h2>
         <p>
-          The monitoring workflow in this project integrates Prometheus, Grafana, and Alertmanager to collect, 
-          visualize, and respond to metrics across all layers of the system. Node Exporter (deployed as a DaemonSet) 
-          gathers node-level data such as CPU and memory usage, while kube-state-metrics provides cluster-level 
-          information about pods, nodes, and deployments. The web application exposes its own application-level 
-          metrics, including HTTP requests and error rates.
+          The CI/CD pipeline is designed to automate the build and deployment process using Jenkins. When changes are pushed to a feature branch and a pull request (PR) is created, the code is reviewed and then merged into the main branch of the GitHub repository.
         </p>
         <p>
-          Each of these sources is exposed through Kubernetes Services and discovered by ServiceMonitors, which 
-          the Prometheus Operator uses to automatically configure Prometheus scraping. Prometheus then stores and 
-          evaluates the collected metrics, forwarding alerts to Alertmanager, which routes notifications to email 
-          and Slack channels. Finally, Grafana connects to Prometheus as a data source, providing interactive 
-          dashboards that visualize real-time performance, availability, and resource utilization across the entire 
-          4-node Kubernetes cluster.
+          Once the changes are merged, Jenkins automatically triggers the pipeline. The pipeline deploys an agent pod to build the Docker image from the project’s Dockerfile, then pushes the image to Docker Hub. After the image is successfully pushed, Jenkins updates the Kubernetes web app deployment by setting the container image to the newly built (latest) version, ensuring the cluster runs the most recent application build.
         </p>
 
        

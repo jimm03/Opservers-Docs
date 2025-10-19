@@ -52,8 +52,8 @@ export default function MonitoringAlerting() {
             <Image 
               src="/images/monitoring/prom-email-msg.png" 
               alt="Email Alert Notifications"
-              width={1000}
-              height={600}
+              width={1100}
+              height={550}
               className="alert-image"
             />
             <p className="image-caption">Email Alert Notifications</p>
@@ -62,8 +62,8 @@ export default function MonitoringAlerting() {
             <Image 
               src="/images/monitoring/prom-slack-msg.png" 
               alt="Slack Channel Alerts"
-              width={1000}
-              height={400}
+              width={1100}
+              height={500}
               className="alert-image"
             />
             <p className="image-caption">Slack Channel Alerts</p>

@@ -110,29 +110,6 @@ curl http://localhost:8080/metrics`}
           {`kubectl describe deployment <deployment-name> -n <namespace>`}
         </div>
 
-        <h2>Remediation Steps</h2>
-        <div className="code-block">
-          {`# Restart the deployment after fix:
-kubectl rollout restart deployment/<deployment-name> -n <namespace>
-
-# Watch pods recover:
-kubectl get pods -n <namespace> -w
-
-# Confirm recovery in Prometheus:
-up{job="web-service"}`}
-        </div>
-        <p><strong>Success:</strong> All targets return 1.</p>
-
-        <h2>Verification</h2>
-        <ul className="bullet-list">
-          <li>All pods show <code>Running</code> status with correct readiness</li>
-          <li>Service endpoints show correct pod IPs</li>
-          <li>Prometheus targets show &quot;up&quot; status</li>
-          <li><code>/metrics</code> endpoint returns data</li>
-          <li>Application responds to normal HTTP requests</li>
-          <li>Alert resolves in Alertmanager</li>
-        </ul>
-
         <h2>Related Runbooks</h2>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginTop: '1rem' }}>
           <Link href="/runbooks/cluster-availability" className="tag-link">Cluster Availability</Link>
