@@ -63,7 +63,7 @@ export default function MonitoringAlerting() {
               src="/images/monitoring/prom-slack-msg.png" 
               alt="Slack Channel Alerts"
               width={1100}
-              height={500}
+              height={550}
               className="alert-image"
             />
             <p className="image-caption">Slack Channel Alerts</p>

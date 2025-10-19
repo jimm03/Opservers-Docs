@@ -82,8 +82,8 @@ export default function CentralizedLogging() {
             <Image 
               src="/images/logging/splunk-slack-alert.png" 
               alt="Splunk Slack Channel Alerts"
-              width={800}
-              height={500}
+              width={1100}
+              height={550}
               className="alert-image"
             />
             <p className="image-caption"><strong>Slack Alerts:</strong> Real-time Slack notifications with severity indicators, quick action buttons, and formatted error details for team collaboration.</p>

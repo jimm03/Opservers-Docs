@@ -5,7 +5,6 @@ import {
   FaCodeBranch,
   FaChartBar,
   FaBook,
-  FaShieldAlt,
   FaArrowRight,
   FaEye
 } from 'react-icons/fa'
@@ -42,12 +41,6 @@ export default function Home() {
       title: 'Runbooks',
       description: 'Standard procedures for handling common incidents'
     },
-    {
-      href: '/disaster-recovery',
-      icon: FaShieldAlt,
-      title: 'Disaster Recovery',
-      description: 'Comprehensive disaster recovery plan and procedures'
-    }
   ]
 
   return (

@@ -43,7 +43,7 @@ kubectl describe pod <pod-name> -n <namespace>`}
         </pre>
         <p>Look for resource issues, restarts, or configuration problems.</p>
 
-        <h3>4. Analyze Recent Changes</h3>
+        <h3>3. Analyze Recent Changes</h3>
         <p>If the pod is part of a deployment, inspect it for recent changes:</p>
         <div className="code-block">
           {`kubectl edit deploy <deployment-name> -n <namespace>`}
