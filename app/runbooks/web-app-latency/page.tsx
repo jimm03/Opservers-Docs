@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { FaArrowLeft, FaExclamationTriangle, FaClock, FaSearch, FaSync } from 'react-icons/fa'
+import { FaArrowLeft, FaExclamationTriangle } from 'react-icons/fa'
 
 export default function WebAppLatencyRunbook() {
   return (
