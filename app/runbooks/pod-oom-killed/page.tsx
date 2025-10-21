@@ -53,61 +53,26 @@ export default function PodOOMKilledRunbook() {
         </div>
         <p>The <code>--previous</code> flag lets you see logs from the last container instance before it was OOMKilled.</p>
 
-        <h3>4. Identify Memory Usage Patterns</h3>
-        <div className="code-block">
-          {`kubectl top pod <pod-name> -n <namespace>`}
-        </div>
-        <p>Check current memory usage if the pod is running, or use Prometheus/Grafana for historical data.</p>
-
-        <h3>5. Identify if the Pod is Part of a Deployment</h3>
+        <h3>4. Identify if the Pod is Part of a Deployment</h3>
         <p>Check the pod description output for the <code>Controlled By</code> field to identify the parent resource.</p>
 
         <h2>Resolution Procedures</h2>
 
-        <h3>🛠️ Fix the Memory Limits</h3>
+        <h3>Fix the Memory Limits</h3>
 
-        <h4>✅ If the Pod is Part of a Deployment</h4>
+        <h4>If the Pod is Part of a Deployment</h4>
         <p>Edit the deployment directly:</p>
         <div className="code-block">
           {`kubectl edit deploy <deployment-name> -n <namespace>`}
         </div>
         <p>Then adjust the container&apos;s memory resources, for example:</p>
-        <div className="code-block">
+        <pre className="code-block">
           {`resources:
   limits:
     memory: "64Mi"     # Increase limit
   requests:
     memory: "32Mi"`}
-        </div>
-        <div className="alert alert-info">
-          <strong>💡 Tip:</strong> Start small (e.g., 2–4× the previous limit) and monitor memory usage afterward.
-        </div>
-
-        <h4>Alternative: Patch the Deployment</h4>
-        <div className="code-block">
-          {`kubectl patch deployment <deployment-name> -n <namespace> -p '{"spec":{"template":{"spec":{"containers":[{"name":"<container-name>","resources":{"limits":{"memory":"128Mi"},"requests":{"memory":"64Mi"}}}]}}}}}'`}
-        </div>
-
-        <h3>🔄 Alternative Approaches</h3>
-        <ul className="bullet-list">
-          <li><strong>Optimize Application:</strong> Reduce memory usage through code optimization</li>
-          <li><strong>Add Horizontal Pod Autoscaling:</strong> Scale based on memory usage</li>
-          <li><strong>Implement Memory Profiling:</strong> Identify memory leaks in the application</li>
-          <li><strong>Adjust Garbage Collection:</strong> For JVM-based applications, tune GC settings</li>
-        </ul>
-
-        <h2>Memory Sizing Guidelines</h2>
-        <div className="code-block">
-          {`Memory Unit Conversion:
-1 Gi = 1024 Mi
-1 Mi = 1024 Ki
-
-Common Memory Ranges:
-• Small service:   64Mi - 128Mi
-• Medium service:  128Mi - 512Mi
-• Large service:   512Mi - 2Gi
-• Database/cache:  1Gi - 8Gi+`}
-        </div>
+        </pre>
 
         <h2>Verification</h2>
         <div className="code-block">
@@ -124,29 +89,9 @@ Common Memory Ranges:
           <li>No memory-related alerts firing</li>
         </ul>
 
-        <h3>Monitor Memory Usage</h3>
-        <div className="code-block">
-          {`# Continuous monitoring
-kubectl top pods -n <namespace> --watch
-
-# Check resource usage
-kubectl describe pod <pod-name> -n <namespace> | grep -A 5 "Limits"`}
-        </div>
-
-        <h2>Prevention</h2>
-        <ul className="bullet-list">
-          <li>Set appropriate memory requests and limits based on application profiling</li>
-          <li>Implement memory usage monitoring and alerts</li>
-          <li>Use resource quotas at namespace level</li>
-          <li>Test applications under load to establish baseline memory requirements</li>
-          <li>Implement horizontal pod autoscaling with memory metrics</li>
-        </ul>
-
         <h2>Related Runbooks</h2>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginTop: '1rem' }}>
           <Link href="/runbooks/pod-restart" className="tag-link">Pod Restart</Link>
-          <Link href="/runbooks/pod-high-memory" className="tag-link">Pod High Memory</Link>
-          <Link href="/runbooks/node-high-memory" className="tag-link">Node High Memory</Link>
           <Link href="/runbooks/cluster-availability" className="tag-link">Cluster Availability</Link>
         </div>
       </div>

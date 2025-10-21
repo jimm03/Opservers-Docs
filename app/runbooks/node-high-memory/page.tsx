@@ -24,7 +24,7 @@ export default function NodeHighMemoryRunbook() {
         <div className="alert alert-info">
           <div>
             <strong>Description:</strong> Node memory usage exceeds threshold for extended period.<br/>
-            <strong>When it triggers:</strong> Node memory usage exceeds 80% (warning) or 85% (critical) for 3 minutes.
+            <strong>When it triggers:</strong> Node memory usage exceeds 70% (warning) or 80% (critical) for 3 minutes.
           </div>
         </div>
 
@@ -46,7 +46,7 @@ kubectl delete pod <pod-name> -n default`}
 
         <h2>Verification</h2>
         <ul className="bullet-list">
-          <li>Memory usage drops below 80% threshold</li>
+          <li>Memory usage drops below 70% threshold</li>
           <li>No critical alerts firing in Alertmanager</li>
         </ul>
 

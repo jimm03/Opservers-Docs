@@ -29,16 +29,6 @@ export default function Runbooks() {
       description: 'Node memory exhaustion and swap usage incidents'
     },
     {
-      href: '/runbooks/pod-high-cpu',
-      title: 'Pod High CPU Usage',
-      description: 'Application-level CPU spikes and performance degradation'
-    },
-    {
-      href: '/runbooks/pod-high-memory',
-      title: 'Pod High Memory Usage',
-      description: 'Application memory leaks and high memory consumption'
-    },
-    {
       href: '/runbooks/web-app-availability',
       title: 'Web App Availability',
       description: 'Web application downtime and service unavailability'

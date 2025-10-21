@@ -1,6 +1,7 @@
 import Image from 'next/image'
 export default function Architecture() {
   const tools = [
+    { tool: "Github", purpose: "Platform for version control and store source code" },
     { tool: "Kubernetes", purpose: "Platform to deploy and manage the web application and monitoring stack" },
     { tool: "Web Application (Flask)", purpose: "Simulated workload generating structured logs and metrics" },
     { tool: "Prometheus", purpose: "Collects time-series metrics from the web app and Kubernetes cluster" },
